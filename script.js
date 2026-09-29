@@ -151,3 +151,50 @@ shareButton.addEventListener("click", async () => {
     }
 
 });
+const orderWhatsApp = document.getElementById("orderWhatsApp");
+
+orderWhatsApp.addEventListener("click", () => {
+
+    const bikeBrand = document.getElementById("bikeBrand").value;
+    const bikeModel = document.getElementById("bikeModel").value;
+    const partName = document.getElementById("partName").value;
+    const quantity = document.getElementById("quantity").value;
+    const customerName = document.getElementById("customerName").value;
+    const customerPhone = document.getElementById("customerPhone").value;
+    const orderMessage = document.getElementById("orderMessage").value;
+
+    if (
+        !bikeBrand ||
+        !bikeModel ||
+        !partName ||
+        !customerName ||
+        !customerPhone
+    ) {
+        alert("Please fill in all required details.");
+        return;
+    }
+
+    const whatsappMessage =
+        `Hello Raza Motor,
+
+I want to order a bike spare part.
+
+Bike Brand: ${bikeBrand}
+Bike Model: ${bikeModel}
+Part Required: ${partName}
+Quantity: ${quantity}
+
+Customer Name: ${customerName}
+Phone Number: ${customerPhone}
+
+Additional Details:
+${orderMessage || "None"}
+
+Please let me know the availability and price. Thank you.`;
+
+    const whatsappURL =
+        "https://wa.me/918409003786?text=" +
+        encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+});
