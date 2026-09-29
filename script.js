@@ -118,3 +118,36 @@ viewAllButton.addEventListener("click", () => {
     viewAllButton.style.display = "none";
 
 });
+// SHARE WEBSITE
+
+const shareButton = document.getElementById("shareButton");
+
+shareButton.addEventListener("click", async () => {
+
+    const shareData = {
+        title: "Raza Motor - Second Hand Bike Spare Parts",
+        text: "Looking for second hand bike spare parts? Check out Raza Motor, Mullick Bazar, Kolkata.",
+        url: "https://raziya8.github.io/Raza-Motor-Website/"
+    };
+
+    if (navigator.share) {
+
+        try {
+            await navigator.share(shareData);
+        } catch (error) {
+            console.log("Share cancelled");
+        }
+
+    } else {
+
+        const whatsappMessage =
+            "Check out Raza Motor for second hand bike spare parts in Mullick Bazar, Kolkata: https://raziya8.github.io/Raza-Motor-Website/";
+
+        window.open(
+            "https://wa.me/?text=" + encodeURIComponent(whatsappMessage),
+            "_blank"
+        );
+
+    }
+
+});

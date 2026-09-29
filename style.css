@@ -760,3 +760,31 @@ a {
     width: 100%;
     height: 350px;
 }
+/* SHARE SECTION */
+
+.share-section {
+    padding: 70px 20px;
+    text-align: center;
+    background: #f7f7f7;
+}
+
+.share-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.share-content h2 {
+    margin: 10px 0 15px;
+    font-size: 32px;
+    color: #111;
+}
+
+.share-content p:not(.section-tag) {
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.share-content .btn {
+    display: inline-block;
+}
