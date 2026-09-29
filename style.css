@@ -48,12 +48,22 @@ a {
     justify-content: space-between;
     gap: 25px;
 }
-
 .logo {
-    color: white;
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 1px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.25s ease;
+}
+
+.logo span {
+    color: #f5b400;
+}
+
+.logo:hover {
+    transform: translateY(-1px);
 }
 
 .logo span {
@@ -92,16 +102,42 @@ a {
 ========================= */
 
 .hero {
+    position: relative;
     background:
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(245, 180, 0, 0.12),
+            transparent 35%
+        ),
         linear-gradient(
-            90deg,
-            #111111 0%,
-            #171717 55%,
+            135deg,
+            #0b0b0b 0%,
+            #151515 55%,
             #202020 100%
         );
+    color: #ffffff;
+    padding: 100px 25px;
+    overflow: hidden;
+}
 
-    color: white;
-    padding: 85px 25px;
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(245, 180, 0, 0.04)
+    );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
@@ -308,10 +344,11 @@ a {
     gap: 20px;
 }
 
+```css
 .part-card {
     background: white;
     border: 1px solid #eeeeee;
-    padding: 32px 22px;
+    padding: 18px;
     text-align: center;
     border-radius: 10px;
     transition: 0.25s;
@@ -322,9 +359,20 @@ a {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
 }
 
-.part-icon {
-    font-size: 34px;
-    margin-bottom: 12px;
+.part-image {
+    width: 100%;
+    height: 170px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+.part-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .part-card h3 {
@@ -336,6 +384,16 @@ a {
     color: #666;
     font-size: 14px;
 }
+```
+
+
+.part-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+}
+
+
+
 
 
 /* =========================
